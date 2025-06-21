@@ -1,0 +1,2 @@
+shell permisions
+engineerind devops
