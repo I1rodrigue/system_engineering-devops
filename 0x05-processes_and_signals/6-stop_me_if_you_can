@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# scroll more
+# Stop the 4-to_infinity_and_beyond process without using kill or killall
+PID=$(pgrep -f 4-to_infinity_and_beyond)
+if [ -n "$PID" ]; then
+echo "Stopping process with PID: $PID"
+    # Send the TERM signal by writing 15 into the /proc/PID/kill
+    echo 15 > "/proc/$PID/oom_score_adj"
+    # Then use the built-in bash kill signal instead of external `kill`
+    exec bash -c "kill -15 $PID"
+fi
