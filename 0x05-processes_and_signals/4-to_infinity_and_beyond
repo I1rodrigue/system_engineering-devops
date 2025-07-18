@@ -1,0 +1,8 @@
+#!/bin/bash
+# Script that runs forever and prints a message every 2 seconds
+
+while true
+do
+  echo "To infinity and beyond"
+  sleep 2
+done
